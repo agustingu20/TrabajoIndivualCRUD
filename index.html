@@ -26,21 +26,33 @@
     <!-- Modal para ingreso de notas -->
 
     <div class="modal fade" id="exampleModal" tabindex="-1">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-body">
-                    <div class="mb-3">
-                        <label for="exampleFormControlInput1" class="form-label">Título</label>
-                        <input type="text" class="form-control" id="exampleFormControlInput1">
-                    </div>
-                    <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">Nota</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
-                    </div>
+                <div class="modal-header">
+                    <h5 class="modal-title">Ingrese una nota</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-                <div class="modal-footer d-flex justify-content-between">
-                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
-                    <button type="button" class="btn btn-success">Crear nota</button>
+                <div class="modal-body">
+                    <form id="formulario">
+                        <div class="mb-3">
+                            <label for="exampleFormControlInput1" class="form-label">Título</label>
+                            <input type="text" class="form-control" id="inputTitulo" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">Nota</label>
+                            <textarea class="form-control" id="inputNota" rows="5" required></textarea>
+                        </div>
+                        <label for="inputCategoria" class="mt-2">Categoría</label>
+                        <select id="inputCategoria" required>
+                            <option>Trabajo</option>
+                            <option>Estudio</option>
+                            <option>Personal</option>
+                        </select>
+                        <div class="modal-footer d-flex justify-content-between mt-4">
+                            <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                            <button type="submit" class="btn btn-success">Crear nota</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
