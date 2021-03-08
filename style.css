@@ -1,5 +1,6 @@
 .misnotas-div {
   margin: auto;
+  margin-top: 5rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -8,4 +9,8 @@
   border-radius: 10px;
   padding-top: 1rem;
   padding-bottom: 1rem;
+}
+
+.tipo-letra {
+  font-weight: 500;
 }
