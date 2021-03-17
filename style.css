@@ -4,13 +4,32 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  width: 30%;
+  width: 576px;
   border: 1px solid black;
   border-radius: 10px;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
 
+.div-tabla {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  margin-top: 2rem;
+  width: 50%;
+}
+
 .tipo-letra {
   font-weight: 500;
+}
+
+@media only screen and (max-width: 425px) {
+  .misnotas-div {
+    width: 350px;
+  }
+}
+@media only screen and (max-width: 1440px) {
+  .div-tabla {
+    width: 75%;
+  }
 }
