@@ -7,6 +7,7 @@ const categoriaEditar = document.getElementById('editarCategoria');
 const notaEditar = document.getElementById('editarValorNota');
 const tituloEditar = document.getElementById('editarTitulo');
 const editarForm = document.getElementById('formularioEditar');
+const busquedaForm = document.getElementById('formBusqueda');
 const json = localStorage.getItem('notas');
 const data = JSON.parse(json);
 let notas = data || [];
@@ -119,4 +120,33 @@ editarForm.onsubmit = function editarNota(e) {
     const myModal = document.getElementById('modalEditar');
     var modal = bootstrap.Modal.getInstance(myModal);
     modal.hide();
+}
+
+busquedaForm.onsubmit = function busquedaNota(e) {
+    e.preventDefault();
+    const notasLocal = JSON.parse(localStorage.getItem('notas')) || [];
+    const busquedaInput = document.getElementById('busqueda');
+    const termino = busquedaInput.value.toLowerCase();
+    const notasFiltradas = notasLocal.filter((nota) => {
+        const tituloEnMinuscula = nota.titulo.toLowerCase();
+        const notaEnMinuscula = nota.nota.toLowerCase();
+        return tituloEnMinuscula.includes(termino) || notaEnMinuscula.includes(termino);
+    });
+    notas = notasFiltradas;
+    mostrarNotas();
+    // Condicional para mostrar u ocultar el mensaje "sin resultados".
+    const alerta = document.getElementById('alertaBusqueda');
+    if (notasFiltradas.length === 0) {
+        alerta.classList.remove('d-none');
+    } else {
+        alerta.classList.add('d-none');
+    }
+};
+
+const limpiarFiltro = () => {
+    notas = JSON.parse(localStorage.getItem('notas')) || [];
+    busquedaForm.reset();
+    mostrarNotas();
+    const alerta = document.getElementById('alertaBusqueda');
+    alerta.classList.add('d-none');
 }

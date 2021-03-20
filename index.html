@@ -57,6 +57,14 @@
             </div>
         </div>
     </div>
+    <div class="mt-5 mb-3 misnotas-div">
+        <form class="mx-3" id="formBusqueda">
+            <label class="fw-bold" for="busqueda">Búsqueda de Nota</label>
+            <input class="mx-3" id="busqueda" type="text">
+            <button class="btn btn-dark" type="submit">Buscar</button>
+            <button class="btn btn-secondary mx-2" type="button" onclick="limpiarFiltro()">Limpiar</button>
+        </form>
+    </div>
 
     <!-- Tabla de usuarios -->
     <div class="div-tabla">
@@ -76,6 +84,10 @@
             </tbody>
         </table>
     </div>
+    <div class="alerta">
+        <div id="alertaBusqueda" class="alert alert-info d-none">No hay resultados para la búsqueda</div>
+    </div>
+
 
     <!-- Modal Detalle Nota -->
     <div class="modal fade" id="modalDetalleNota" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

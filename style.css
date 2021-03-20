@@ -33,11 +33,17 @@ body {
   font-weight: 500;
 }
 
+.alerta {
+  width: 300px;
+  margin: auto;
+}
+
 @media only screen and (max-width: 425px) {
   .misnotas-div {
     width: 350px;
   }
 }
+
 @media only screen and (max-width: 1440px) {
   .div-tabla {
     width: 75%;
