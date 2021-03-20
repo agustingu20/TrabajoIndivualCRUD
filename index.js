@@ -4,6 +4,7 @@ const notaInput = document.getElementById('inputNota');
 const categoriaInput = document.getElementById('inputCategoria');
 const notasTable = document.getElementById('tabla');
 const categoriaEditar = document.getElementById('editarCategoria');
+const notaEditar = document.getElementById('editarValorNota');
 const tituloEditar = document.getElementById('editarTitulo');
 const editarForm = document.getElementById('formularioEditar');
 const json = localStorage.getItem('notas');
@@ -91,6 +92,7 @@ function mostrarDetalles(id) {
 function cargarModalEditar(id) {
     const notaEncontrada = notas.find((nota) => nota.id === id);
     tituloEditar.value = notaEncontrada.titulo;
+    notaEditar.value = notaEncontrada.nota;
     categoriaEditar.value = notaEncontrada.categoria;
     notaId = notaEncontrada.id;
 }
@@ -102,6 +104,7 @@ editarForm.onsubmit = function editarNota(e) {
             const notaModificada = {
                 ...nota,
                 titulo: tituloEditar.value,
+                nota: notaEditar.value,
                 categoria: categoriaEditar.value,
             };
             return notaModificada;

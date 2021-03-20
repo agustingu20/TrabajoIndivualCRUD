@@ -1,3 +1,7 @@
+body {
+  background-image: url(./img/1.jpg);
+}
+
 .misnotas-div {
   margin: auto;
   margin-top: 5rem;
@@ -9,6 +13,12 @@
   border-radius: 10px;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  background-color: rgba(255, 255, 255, 0.582);
+}
+
+.color-tabla {
+  background-color: white;
+  border-radius: 10px;
 }
 
 .div-tabla {
